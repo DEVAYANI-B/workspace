@@ -6,4 +6,4 @@ def add student(student_id,name,age,department):
     if not name or str(name).strip()="":
         raise ValueError("Name cannot be empty.")
     if age is None:
-        raise ValueError("Age ")
+        raise ValueError("Age cannot be empty")
