@@ -20,3 +20,16 @@ def add_student(student_id,name,age,department):
         "department":department.strip()
     }
     students.append(student)
+
+def view_students():
+    return students.copy()
+def filter_by_department(dept_name):
+    result=[s for s in students if s["department"].lower()==dept_name.lower()]
+    if not result:
+        raise ValueError(f"No students found in department: {dept_name}")
+    return result
+def save_to_file(filename,data):
+    pass
+def load_from_file(filename):
+    pass
+    
