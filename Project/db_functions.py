@@ -44,3 +44,4 @@ def _initialize_schema(conn):
     )""")
     conn.commit()
     cursor.close()
+def insert_student
