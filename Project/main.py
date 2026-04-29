@@ -21,4 +21,9 @@ def menu():
                 print(f"Student {name} added successfully.")
             except ValueError as e:
                 print(f"Error: {e}")
-                
+        elif choice=="2":
+            try:
+                dept=input("Enter Department name: ")
+                result=filter_by_department(dept)
+                for s in result:
+                    
