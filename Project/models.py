@@ -4,7 +4,9 @@ class Student:
         self.name=name
         self.age=age
         self.department=department
-    def get_info(self):
+        def get_info(self):
+            return f"ID:{self.student_id}, Name:{self.name}, Age:{self.age}, Department:{self.department}"
+        def __str__(self):
         return f"Student(ID:{self.student_id}, Name:{self.name}, Age:{self.age}, Department:{self.department})"
 
 class Course:
