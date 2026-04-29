@@ -23,4 +23,5 @@ class Enrollment:
     def get_info(self):
         return f"Student: {self.student.name}, Course: {self.course.name}"
     def __str__(self):
-        return f"E"
+        return f"Enrollment(Student: {self.student.name}, Course: {self.course.name})"
+        
