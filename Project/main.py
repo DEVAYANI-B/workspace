@@ -34,7 +34,7 @@ def menu():
                 course_id=int(input("Enter Course ID: "))
                 name=input("Enter Course Name: ")
                 credits = int(input("Enter Credits: "))
-                add_course(course_id, name, Credits)
+                add_course(course_id, name, credits)
                 print(f"Course {name} added successfully.")
             except ValueError as e:
                 print(f"Error: {e}")
