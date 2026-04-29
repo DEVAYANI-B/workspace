@@ -4,7 +4,7 @@ from enrollment_functions import enroll_student
 
 def menu():
     while True:
-        print(\n1. Add Student)
+        print("\n1. Add Student")
         print("2. View Studnets by Department")
         print("3. Add Course")
         print("4. Enroll Student")
