@@ -44,4 +44,11 @@ def _initialize_schema(conn):
     )""")
     conn.commit()
     cursor.close()
-def insert_student
+def insert_student(student_id,name,age,department):
+    try:
+        conn=get_connection()
+        cursor=conn.cursor()
+        cursor.execute(
+            "INSERT INTO students(student_id,name,age,department) VALUES (?,?,?,?)",
+            (student_id,name,age,department)
+        )
