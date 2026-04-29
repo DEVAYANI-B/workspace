@@ -1,4 +1,6 @@
 import json
+from exceptions import DepartmentNotFoundError
+
 
 students=[]
 
