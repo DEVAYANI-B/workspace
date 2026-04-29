@@ -8,10 +8,12 @@ def add_course(course_id,name,credits):
     if credits is None or not isinstance(credits,int) or credits<=0:
         raise ValueError("Credits must be a positive integer.")
     
-    course=
-
-
-
+    course={
+        "course_id":course_id,
+        "name": name.strip(),
+        "credits":credits
+    }
+    
     courses.append(course)
 def view_courses():
     return courses.copy()
