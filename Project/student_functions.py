@@ -28,7 +28,7 @@ def view_students():
 def filter_by_department(dept_name):
     result=[s for s in students if s["department"].lower()==dept_name.lower()]
     if not result:
-        raise ValueError(f"No students found in department: {dept_name}")
+        raise DepartmentNotFoundError(f"No students found in department: {dept_name}")
     return result
 def save_to_file(filename,data):
     pass
