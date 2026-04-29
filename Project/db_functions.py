@@ -51,4 +51,11 @@ def insert_student(student_id,name,age,department):
         cursor.execute(
             "INSERT INTO students(student_id,name,age,department) VALUES (?,?,?,?)",
             (student_id,name,age,department)
+
         )
+        conn.commit()
+        cursor.close()
+        conn.close()
+        except pyodbc.Error as e:
+            print(f"Database error: {e}")
+            
