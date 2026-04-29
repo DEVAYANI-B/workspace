@@ -26,4 +26,11 @@ def menu():
                 dept=input("Enter Department name: ")
                 result=filter_by_department(dept)
                 for s in result:
-                    
+                    print(f"ID:{s['student_id']}, Name:{s['name']}, Age:{s['age']}, Dept:{s['department']}")
+            except Exception as e:
+                print(f"Error: {e}")
+        elif choice=="3":
+            try:
+                course_id=int(input("Enter Course ID: "))
+                name=input("Enter Course Name: ")
+                credits = int(input)
