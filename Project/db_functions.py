@@ -3,7 +3,7 @@ import pyodbc
 CONNECTION_STRING=(
 'DRIVER={ODBC Driver 17 for SQL Server};'
 'SERVER=localhost,1433;'
-'DATABASE = appdb;'
+'DATABASE=appdb;'
 'UID=sa;'
 'PWD=examlyMssql@123'
 )
