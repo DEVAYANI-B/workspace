@@ -7,7 +7,7 @@ def add_course(course_id,name,credits):
     
     if credits is None or not isinstance(credits,int) or credits<=0:
         raise ValueError("Credits must be a positive integer.")
-    if any(c["course_id"]==course_id for c in course):
+    if any(c["course_id"]==course_id for c in courses):
         raise ValueError(f"Course with ID {course_id} already exists.")
     
     course={
