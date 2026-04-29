@@ -33,4 +33,25 @@ def menu():
             try:
                 course_id=int(input("Enter Course ID: "))
                 name=input("Enter Course Name: ")
-                credits = int(input)
+                credits = int(input("Enter Credits: "))
+                add_course(course_id, name, Credits)
+                print(f"Course {name} added successfully.")
+            except ValueError as e:
+                print(f"Error: {e}")
+        elif choice=="4":
+            try:
+                student_id=int(input("Enter Student ID: "))
+                course_id=int(input("Enter Course ID: "))
+                enroll_student(student_id,course_id)
+                print(f"Student {student_id} enrolled in course {course_id}.")
+            except ValueError as e:
+                print(f"Error: {e}")
+        elif choice=="5":
+            print("Exiting the menu. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please enter 1-5.")
+
+
+if __name__ == "__main__":
+    menu()
