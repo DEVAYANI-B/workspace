@@ -66,4 +66,51 @@ def update_student(student_id,name=None,age=None,department=None):
         fields=[]
         values=[]
         if name is not None:
-            fields.append
+            fields.append("name = ?")
+            values.append(name)
+        if age is not None:
+            fields.append("age = ?")
+            values.append(age)
+        if department is not None:
+            fields.append("department = ?")
+            values.append(department)
+        if not fields:
+            return
+        values.append(student_id)
+        sql=f"UPDATE students SET {', '.join(fields)} WHERE student_id = ?"
+        cursor.execute(sql,values)
+        conn.commit()
+        cursor.close()
+        conn.close()
+    except pyodbc.Error as e:
+        print(f"Database error: {e}")
+def delete_student(student_id):
+    try:
+        conn=get_connection()
+        cursor=conn.cursor()
+        cursor.execute("DELETE FROM students WHERE student_id=?",(student_id,))
+        conn.commit()
+        cursor.close()
+        conn.close()
+    except pyodbc.Error as e:
+        print(f"Database error: {e}")
+def fetch_student(student_id):
+    try:
+        conn=get_connection()
+        cursor=conn.cursor()
+        cursor.execute("SELECT student_id,name,age,department FROM students WHERE student_id=?",(student_id,))
+        row=cursor.fetchone()
+        cursor.close()
+        conn.close()
+        if row:
+            return{
+                "student_id": row[0],
+                "name": row[1],
+                "age": row[2],
+                "department" : row[3]
+
+            }
+        return None
+    except pyodbc.Error as e:
+        print(f"Database error: {e}")
+        return None
