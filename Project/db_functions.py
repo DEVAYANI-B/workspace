@@ -56,8 +56,8 @@ def insert_student(student_id,name,age,department):
         conn.commit()
         cursor.close()
         conn.close()
-        except pyodbc.Error as e:
-            print(f"Database error: {e}")
+    except pyodbc.Error as e:
+        print(f"Database error: {e}")
 
 def update_student(student_id,name=None,age=None,department=None):
     try:
