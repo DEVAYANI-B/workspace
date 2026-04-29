@@ -11,5 +11,6 @@ def enroll_student(student_id,course_id):
         raise ValueError(f"Course with ID {course_id} does not exist.")
     enrollment={
         "student_id":student_id,
-        "course"
+        "course_id":course_id
     }
+    enrollments.append(enrollment)
