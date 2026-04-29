@@ -31,7 +31,17 @@ def filter_by_department(dept_name):
         raise DepartmentNotFoundError(f"No students found in department: {dept_name}")
     return result
 def save_to_file(filename,data):
-    pass
+    json.dumps(data)
+    with open(filename, "w") as f:
+        json.dump(data,f,indent=4)
 def load_from_file(filename):
-    pass
+    try:
+        with open(filename, "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return []
+    except json.JSONDecodeError as e:
+        print(f"Error reading file: {e}")
+        return []
+    
     
